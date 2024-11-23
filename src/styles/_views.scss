@@ -1,0 +1,73 @@
+@use'variaveis';
+
+.views{
+    padding: 5.6vw;
+    margin-top: 50px;
+
+    h2{
+        text-align: center;
+        color: variaveis.$cordeTextoPrincipal;
+        margin-bottom: 35px;
+    }
+
+    &__content{
+
+        &__platforms{
+            display: flex;
+            justify-content: space-around;
+
+            @media(max-width: 768px){
+                display: block;
+                justify-content: center;
+
+            }
+            
+            &__item{
+                text-align: center;
+                width: calc(33% - 12px);
+                list-style-type: none;
+                padding: 60px 44px 44px;
+                max-width: 380px;
+                width: 100%;
+                border: 2px solid transparent;
+                // border-image: url(../images/borda_pergaminho_2.png) 460 / 120 / 10 round ;
+                
+                @media(max-width: 768px){
+                    border-image: none;
+                }
+
+
+
+                img {
+                    height: 15vw;
+                    width: 20vw;
+                    max-width: 100%;
+                    background-size: cover;
+                    animation: spin 12s linear infinite; // Aplica a animação de spin
+
+                    @media (max-width: 768px) {
+                        height: 40vw;
+                        width: 40vw;
+                    }
+                }
+                
+                // Definição da animação
+                @keyframes spin {
+                    from {
+                        transform: rotate(0deg); // Posição inicial
+                    }
+                    to {
+                        transform: rotate(360deg); // Rotação completa
+                    }
+                }
+                
+                    a{
+                        text-decoration: none;
+                        color: variaveis.$cordeTextoPrincipal;
+                        text-transform: uppercase;
+                    }
+
+            }
+        }
+    }
+}
